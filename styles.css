@@ -36,11 +36,11 @@ body {
 }
 
 .dark {
-  --clr-bg: #23283e;
-  --clr-bg-alt: #2a2f4c;
-  --clr-fg: #bdbddd;
-  --clr-fg-alt: #cdcdff;
-  --clr-primary: #90a0d9;
+  --clr-bg: 	#151617;
+  --clr-bg-alt: 	#202223;
+  --clr-fg: 	#D8D5CE;
+  --clr-fg-alt: #A9A7A0;
+  --clr-primary: 	#D4885B;
   --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -130,7 +130,6 @@ button {
 
 .link--nav {
   color: var(--clr-fg);
-  text-transform: lowercase;
   font-weight: 500;
 }
 
@@ -144,7 +143,6 @@ button {
   padding: 0.8em 1.4em;
   font-weight: 500;
   font-size: 0.9rem;
-  text-transform: lowercase;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -203,6 +201,53 @@ button {
   transform: translateY(-5px);
 }
 
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--clr-fg);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--clr-primary);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--clr-bg-alt);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: var(--clr-fg);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--clr-main);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
 /*========
   layout
 ========*/
@@ -236,13 +281,20 @@ main {
   text-transform: uppercase;
 }
 
+.section__subtitle {
+  text-align: center;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
 .nav__list {
   margin-right: 1.5em;
-  display: flex;
+  display: block;
 }
 
 .nav__list-item {
   margin-left: 1.5em;
+  display: block;
 }
 
 .nav__hamburger {
@@ -273,13 +325,13 @@ main {
   margin-top: 2.4em;
 }
 
-.about .link--icon {
+/* .about .link--icon {
   margin-right: 0.8em;
 }
 
 .about .btn--outline {
   margin-right: 1em;
-}
+} */
 
 .projects__grid {
   max-width: 1100px;
@@ -289,7 +341,7 @@ main {
   grid-gap: 2em;
 }
 
-.project {
+.project{
   padding: 2em;
   margin: 0 auto;
   text-align: center;
@@ -297,8 +349,25 @@ main {
   transition: transform 0.2s linear;
 }
 
-.project:hover {
+.experience, .beyond  {
+  padding: 2em;
+  margin: 2em auto;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s linear;
+}
+
+.project:hover, .experience:hover, .beyond:hover {
   transform: translateY(-7px);
+}
+
+.beyond li, .experience li{
+  text-align: left;
+}
+
+.beyond ul, .experience ul{
+  width: 80%;
+  margin: auto; 
 }
 
 .project__description {

@@ -15,78 +15,215 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Raj Shekhar</title>
+    <title>Mišel Širovnik</title>
   </head>
-  <body class="light" id="top">
+  <body class="dark" id="top">
     <header class="header center">
       <h3>
-        <a href="https://rjshkhr.github.io/cleanfolio-minimal" class="link"
-          >RS.</a
+        <a href="index.html" class="link"
+          >MS.</a
         >
       </h3>
 
       <nav class="nav center">
+        <div class="dropdown">
+          <button class="dropbtn">Work
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <ul class="nav__list center">
+              <li class="nav__list-item">
+                <a class="link link--nav" href="#experience">Experience</a>
+              </li>
+              <li class="nav__list-item">
+                <a class="link link--nav" href="#projects">Projects</a>
+              </li>
+              <li class="nav__list-item">
+                <a class="link link--nav" href="#skills">Skills</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <ul class="nav__list center">
+              <li class="nav__list-item">
+                <a class="link link--nav" href="#beyond">Beyond Code</a>
+              </li>
+              <li class="nav__list-item">
+                <a class="link link--nav" href="#education">Education</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <ul class="nav__list center">
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#projects">Projects</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#skills">Skills</a>
-          </li>
           <li class="nav__list-item">
             <a class="link link--nav" href="#contact">Contact</a>
           </li>
         </ul>
-
-        <button type="button" aria-label="toggle theme" class="btn btn--icon">
-          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-        </button>
-
-        <button
-          type="button"
-          aria-label="toggle navigation"
-          class="btn btn--icon nav__hamburger"
-        >
-          <i aria-hidden="true" class="fas fa-bars"></i>
-        </button>
+        
       </nav>
     </header>
 
     <main>
       <!-- About -->
       <div class="about center">
-        <h1>Hi, I am <span class="about__name">Raj Shekhar.</span></h1>
-        <h2 class="about__role">A Front end Developer.</h2>
+        <h1>Hi, I am <span class="about__name">Mišel Širovnik.</span></h1>
+        <h2 class="about__role">Software Engineer & Developer Advocate</h2>
         <p class="about__desc">
-          Consectetur neque sed quam molestiae consectetur nesciunt sit alias
-          Vitae libero perferendis reprehenderit optio veritatis Accusantium at
-          voluptatum cumque temporibus et Explicabo iste porro quis numquam
-          distinctio Repellendus adipisci nam perferendis amet eaque hic
-          Voluptates
+          Slovenian backend developer experienced in .NET and REST APIs, with practical knowledge of CI/CD pipelines (GitLab), AWS, and Docker. 
+          Proven at creating clear technical documentation and troubleshooting code in production environments. 
+          Pursuing CCNA to advance networking knowledge, and passionate about collaborating to bridge code with customer solutions. 
+          Strong communicator with experience teaching IT and managing community collaboration.
         </p>
 
         <div class="about__contact center">
-          <a href="https://example.com">
-            <span class="btn btn--outline">Resume</span>
-          </a>
-
-          <a
-            href="https://github.com/rjshkhr"
-            aria-label="github"
-            class="link link--icon"
-          >
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-
-          <a
-            href="https://linkedin.com/in/rjshkhr"
-            aria-label="linkedin"
-            class="link link--icon"
-          >
-            <i aria-hidden="true" class="fab fa-linkedin"></i>
+          <a href="assets\Resume-2.pdf" download="Misel_Sirovnik_CV">
+            <span class="btn btn--outline">Download CV</span>
           </a>
         </div>
       </div>
+
+      <!-- Experience -->
+      <section id="experience" class="section projects">
+        <h2 class="section__title">Experience</h2>
+
+        <div>
+          <div class="experience">
+            <h3>Backend Developer</h3>
+            <h5 class="section__subtitle">Metronik | 2022-2024</h5>
+            
+              <ul>
+                <li>
+                  • Developed .NET/C# REST APIs with MsSQL database integration
+                </li>
+                <li>
+                  • Maintained and troubleshot legacy systems on Windows Server environments
+                </li>
+                <li>
+                  • Created technical and user-focused documentation
+                </li>
+                <li>
+                  • Designed and optimized relational database schemas and SQL scripts
+                </li>
+              </ul>
+          </div>
+
+          <div class="experience">
+            <h3>Fullstack Developer</h3>
+            <h5 class="section__subtitle">Društvo Duh Časa | 2020</h5>
+            
+              <ul>
+                <li>
+                  • Updated internal inventory system with PHP/MySQL backend
+                </li>
+                <li>
+                  • Redesigned database structure and migration scripts
+                </li>
+                <li>
+                  • Improved UI using Bootstrap components
+                </li>
+              </ul>
+          </div>
+
+          
+          <div class="experience">
+            <h3>IT Educator & Support</h3>
+            <h5 class="section__subtitle">BIC Ljubljana | 2025</h5>
+            
+              <ul>
+                <li>
+                  • Taught IT concepts including networking fundamentals
+                </li>
+                <li>
+                  • Provided hardware troubleshooting support
+                </li>
+              </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Beyond Code -->
+      <section id="beyond" class="section projects">
+        <h2 class="section__title">Beyond Code</h2>
+
+        <div>
+          <div class="beyond">
+            <h3>🛠️ Tech Community Leadership</h3>
+            <h5 class="section__subtitle">Co-Founder & Secretary, LeftClick Hackerspace</h5>
+              <ul>
+                <li>
+                  • Co-founded non-profit hackerspace promoting open-source collaboration
+                </li>
+                <li>
+                  • Hosted "Geekend" tech event featuring Graz's realraum hackerspace as guest presenters
+                </li>
+                <li>
+                  • Refurbished 10+ computers with Linux for community donation
+                </li>
+              </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="beyond">
+            <h3>🎉 Event Production & Coordination</h3>
+            <h5 class="section__subtitle">Electronic Music Events (2016-2020)</h5>
+              <ul>
+                <li>
+                  • Executed 10+ events for 100-300 attendees
+                </li>
+                <li>
+                  • Negotiated contracts with venues/artists
+                </li>
+                <li>
+                  • Solved real-time crises (equipment failure, scheduling conflicts, compliance issues)
+                </li>
+              </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="beyond">
+            <h3>🤖 International Robotics Competitions</h3>
+            <h5 class="section__subtitle">RoboCup Junior Simulation League (2019)</h5>
+              <ul>
+                <li>
+                  • 6th Place globally in Sydney
+                </li>
+                <li>
+                  • 3x National Champion
+                </li>
+                <li>
+                  • Algorithm development under competition constraints
+                </li>
+              </ul>
+          </div>
+        </div>
+        
+        <div>
+          <div class="beyond">
+            <h3>🎮 Fueled Game Jams with Sound</h3>
+            <h5 class="section__subtitle">Collaborative Sound Design</h5>
+              <ul>
+                <li>
+                  • Created SFX/music for 3 competition entries
+                </li>
+                <li>
+                  • Worked under week-long deadlines with remote teams
+                </li>
+              </ul>
+          </div>
+        </div>
+
+      </section>
 
       <!-- Projects -->
       <section id="projects" class="section projects">
@@ -94,16 +231,41 @@
 
         <div class="projects__grid">
           <div class="project">
-            <h3>Project 1</h3>
+            <h3>🔧IoT Cloud Data Logger</h3>
             <p class="project__description">
-              Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-              sapiente debitis labore sed ipsam Mollitia repellat illum quod
-              unde beatae Quis
+              Low-power sensor system with deep sleep/interrupts for cloud data upload.
             </p>
             <ul class="project__stack">
-              <li class="project__stack-item">SASS</li>
-              <li class="project__stack-item">TypeScript</li>
-              <li class="project__stack-item">React</li>
+              <li class="project__stack-item">Arduino</li>
+              <li class="project__stack-item">C++</li>
+              <li class="project__stack-item">Google Cloud</li>
+            </ul>
+
+            <a
+              href="https://github.com"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://example.com"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <div class="project">
+            <h3>🔧Gitlab API template</h3>
+            <p class="project__description">
+              Scalable API template with automated cloud deployment pipelines.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">AWS</li>
+              <li class="project__stack-item">Docker</li>
+              <li class="project__stack-item">Gitlab CI/CD</li>
+              <li class="project__stack-item">C#</li>
             </ul>
 
             <a
@@ -123,16 +285,13 @@
           </div>
 
           <div class="project">
-            <h3>Project 2</h3>
+            <h3>🔧Android Activity Tracker</h3>
             <p class="project__description">
-              Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-              sapiente debitis labore sed ipsam Mollitia repellat illum quod
-              unde beatae Quis
+              Battery-efficient activity tracker android app using Google Activity API.
             </p>
             <ul class="project__stack">
-              <li class="project__stack-item">SASS</li>
-              <li class="project__stack-item">TypeScript</li>
-              <li class="project__stack-item">React</li>
+              <li class="project__stack-item">Kotlin</li>
+              <li class="project__stack-item">Android SDK</li>
             </ul>
 
             <a
@@ -152,16 +311,13 @@
           </div>
 
           <div class="project">
-            <h3>Project 3</h3>
+            <h3>🎨glitchr</h3>
             <p class="project__description">
-              Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-              sapiente debitis labore sed ipsam Mollitia repellat illum quod
-              unde beatae Quis
+              Video datamoshing tool applying audio effects to visual data.
             </p>
+            <img  src="assets\glitchr.gif" alt="Cool thing made with glitcr :)" width="100%" height="auto"/>
             <ul class="project__stack">
-              <li class="project__stack-item">SASS</li>
-              <li class="project__stack-item">TypeScript</li>
-              <li class="project__stack-item">React</li>
+              <li class="project__stack-item">Python</li>
             </ul>
 
             <a
@@ -178,6 +334,164 @@
             >
               <i aria-hidden="true" class="fas fa-external-link-alt"></i>
             </a>
+          </div>
+
+          <div class="project">
+            <h3>🎨VST Plugin UI Overhaul</h3>
+            <p class="project__description">
+              Redesigned interface for open-source audio plugin bundle (forked project).
+              Addressing compatibility issues before open-sourcing.
+            </p>
+            <img  src="assets\vst.png" alt="Cool thing made with glitcr :)" width="100%" height="auto"/>
+            <ul class="project__stack">
+              <li class="project__stack-item">JUCE</li>
+              <li class="project__stack-item">C++</li>
+              <li class="project__stack-item">UI/UX</li>
+            </ul>
+
+            <a
+              href="https://github.com"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://example.com"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>🎨Rogue Em Up</h3>
+            <p class="project__description">
+              Beat em up rogue-like game developed in 72 hours.
+            </p>
+            <img  src="assets\rogue.gif" alt="Cool cideo game I made in gif form." width="100%" height="auto"/>
+            <ul class="project__stack">
+              <li class="project__stack-item">Godot</li>
+              <li class="project__stack-item">C#</li>
+            </ul>
+
+            <a
+              href="https://github.com"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://example.com"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>🧠prev22 Language Compiler</h3>
+            <p class="project__description">
+              Full compiler implementation with lexing, parsing, and code generation.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Java</li>
+              <li class="project__stack-item">ANTLR</li>
+            </ul>
+
+            <a
+              href="https://github.com"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://example.com"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>🧠High-Dimensional Optimization</h3>
+            <p class="project__description">
+              Benchmarked SA/DE/VNS algorithms on 12D optimization problems.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Python</li>
+            </ul>
+
+            <a
+              href="https://github.com"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://example.com"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>🧠University REST APIs</h3>
+            <p class="project__description">
+              Three APIs developed during university. One with Angular frontend. Private repositories - contain sensitive data.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Java</li>
+              <li class="project__stack-item">Maven</li>
+              <li class="project__stack-item">Angular</li>
+            </ul>
+
+            <a
+              href="https://github.com"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://example.com"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section projects">
+        <h2 class="section__title">Education & Certifications</h2>
+
+        <div>
+          <div class="beyond">
+            <h3>University of Ljubljana, Computer Science</h3>
+            <p>
+              Coursework completed - diploma expected 2025.
+            </p>
+          </div>
+        </div>
+        
+        <div>
+          <div class="beyond">
+            <h3>Cisco CCNA</h3>
+            <p>
+              In progress (est. completion 2025)
+            </p>
           </div>
         </div>
       </section>
@@ -186,37 +500,31 @@
       <section class="section skills" id="skills">
         <h2 class="section__title">Skills</h2>
         <ul class="skills__list">
-          <li class="skills__list-item btn btn--plain">HTML</li>
-          <li class="skills__list-item btn btn--plain">CSS</li>
-          <li class="skills__list-item btn btn--plain">SCSS</li>
-          <li class="skills__list-item btn btn--plain">JavaScript</li>
-          <li class="skills__list-item btn btn--plain">TypeScript</li>
-          <li class="skills__list-item btn btn--plain">React</li>
-          <li class="skills__list-item btn btn--plain">Redux</li>
+          <li class="skills__list-item btn btn--plain">C#/.NET</li>
+          <li class="skills__list-item btn btn--plain">Java</li>
+          <li class="skills__list-item btn btn--plain">Python</li>
           <li class="skills__list-item btn btn--plain">Git</li>
-          <li class="skills__list-item btn btn--plain">Material UI</li>
-          <li class="skills__list-item btn btn--plain">Jest</li>
-          <li class="skills__list-item btn btn--plain">Enzyme</li>
-          <li class="skills__list-item btn btn--plain">CI/CD</li>
+          <li class="skills__list-item btn btn--plain">GitLab CI/CD</li>
+          <li class="skills__list-item btn btn--plain">AWS</li>
+          <li class="skills__list-item btn btn--plain">Docker</li>
+          <li class="skills__list-item btn btn--plain">Windows Server</li>
+          <li class="skills__list-item btn btn--plain">REST API</li>
+          <li class="skills__list-item btn btn--plain">TCP/IP</li>
+          <li class="skills__list-item btn btn--plain">Jira</li>
+          <li class="skills__list-item btn btn--plain">Technical Documentation</li>
         </ul>
       </section>
 
       <!-- Contact -->
       <section class="section contact center" id="contact">
         <h2 class="section__title">Contact</h2>
-        <a href="mailto:rjshekhar.official@gmail.com">
+        <a href="mailto:misel.sirovnik@gmail.com">
           <span class="btn btn--outline">Email me</span>
         </a>
       </section>
     </main>
 
     <footer class="footer">
-      <a
-        href="https://github.com/rjshkhr/cleanfolio-minimal"
-        class="link footer__link"
-      >
-        Created By Raj Shekhar
-      </a>
     </footer>
 
     <div class="scroll-container">
