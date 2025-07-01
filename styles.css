@@ -347,6 +347,18 @@ main {
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.2s linear;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.project a{
+  margin-top: auto;
+  width: min-content;
+  align-self: center;
+}
+
+.project img{
+  margin-top: 1em;
 }
 
 .experience, .beyond  {
@@ -383,13 +395,13 @@ main {
 
 .project__stack-item {
   margin: 0.5em;
+  padding: 0.5em;
   font-weight: 500;
   font-size: 0.8rem;
   color: var(--clr-fg-alt);
-}
-
-.project .link--icon {
-  margin-left: 0.5em;
+  background-color: var(--clr-bg-alt);
+  border: 0.1em solid var(--clr-fg-alt);
+  border-radius: 0.3em;
 }
 
 .skills__list {
