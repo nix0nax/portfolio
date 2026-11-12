@@ -7,11 +7,28 @@ const btnHamburger = document.querySelector('.fa-bars')
 body.classList.remove('null')
 
 // apply saved theme, otherwise keep the hardcoded class on <body>
+const media = window.matchMedia('(prefers-color-scheme: light)')
 const savedTheme = localStorage.getItem('portfolio-theme')
-if (savedTheme === 'light' || savedTheme === 'dark') {
+
+const applyTheme = (theme) => {
   body.classList.remove('light', 'dark')
-  body.classList.add(savedTheme)
+  body.classList.add(theme)
 }
+
+// saved choice wins, otherwise follow the OS
+applyTheme(
+  savedTheme === 'light' || savedTheme === 'dark'
+    ? savedTheme
+    : media.matches ? 'light' : 'dark'
+)
+
+// follow live OS changes, but only if the user never picked manually
+media.addEventListener('change', (e) => {
+  if (!localStorage.getItem('portfolio-theme')) {
+    applyTheme(e.matches ? 'light' : 'dark')
+    syncIcon()
+  }
+})
 
 const syncIcon = () => {
   if (themeIcon) {

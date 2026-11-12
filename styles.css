@@ -544,18 +544,6 @@ main {
   margin: 0.4em 0;
 }
 
-/* Default to light if the user's OS prefers light, otherwise dark */
-@media (prefers-color-scheme: light) {
-  body {
-    /* This applies the light theme variables by default if their OS is light */
-    --clr-bg: #fcfcfc;
-    --clr-bg-alt: #fff;
-    --clr-fg: #555;
-    --clr-fg-alt: #444;
-    --clr-primary: #C2410C; /* Or keep your orange #D4885B if you prefer */
-  }
-}
-
 .theme-toggle {
   background: none;
   border: 0;
