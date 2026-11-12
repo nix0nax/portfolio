@@ -1,63 +1,60 @@
 const body = document.body
-
-const btnTheme = document.querySelector('.fa-moon')
+const btnTheme = document.querySelector('#theme-toggle')
+const themeIcon = document.querySelector('.theme-toggle__icon')
 const btnHamburger = document.querySelector('.fa-bars')
 
-const addThemeClass = (bodyClass, btnClass) => {
-  body.classList.add(bodyClass)
-  btnTheme.classList.add(btnClass)
+// clean up the junk class the old script used to add
+body.classList.remove('null')
+
+// apply saved theme, otherwise keep the hardcoded class on <body>
+const savedTheme = localStorage.getItem('portfolio-theme')
+if (savedTheme === 'light' || savedTheme === 'dark') {
+  body.classList.remove('light', 'dark')
+  body.classList.add(savedTheme)
 }
 
-const getBodyTheme = localStorage.getItem('portfolio-theme')
-const getBtnTheme = localStorage.getItem('portfolio-btn-theme')
+const syncIcon = () => {
+  if (themeIcon) {
+    themeIcon.textContent = body.classList.contains('dark') ? '🌙' : '☀️'
+  }
+}
+syncIcon()
 
-addThemeClass(getBodyTheme, getBtnTheme)
-
-const isDark = () => body.classList.contains('dark')
-
-const setTheme = (bodyClass, btnClass) => {
-
-	body.classList.remove(localStorage.getItem('portfolio-theme'))
-	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
-
-  addThemeClass(bodyClass, btnClass)
-
-	localStorage.setItem('portfolio-theme', bodyClass)
-	localStorage.setItem('portfolio-btn-theme', btnClass)
+if (btnTheme) {
+  btnTheme.addEventListener('click', () => {
+    const next = body.classList.contains('dark') ? 'light' : 'dark'
+    body.classList.remove('dark', 'light')
+    body.classList.add(next)
+    localStorage.setItem('portfolio-theme', next)
+    syncIcon()
+  })
 }
 
-const toggleTheme = () =>
-	isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun')
-
-btnTheme.addEventListener('click', toggleTheme)
-
-const displayList = () => {
-	const navUl = document.querySelector('.nav__list')
-
-	if (btnHamburger.classList.contains('fa-bars')) {
-		btnHamburger.classList.remove('fa-bars')
-		btnHamburger.classList.add('fa-times')
-		navUl.classList.add('display-nav-list')
-	} else {
-		btnHamburger.classList.remove('fa-times')
-		btnHamburger.classList.add('fa-bars')
-		navUl.classList.remove('display-nav-list')
-	}
+// only wire this up if a hamburger actually exists
+if (btnHamburger) {
+  btnHamburger.addEventListener('click', () => {
+    const navUl = document.querySelector('.nav__list')
+    const isOpen = btnHamburger.classList.contains('fa-bars')
+    btnHamburger.classList.toggle('fa-bars', !isOpen)
+    btnHamburger.classList.toggle('fa-times', isOpen)
+    if (navUl) navUl.classList.toggle('display-nav-list', isOpen)
+  })
 }
 
-btnHamburger.addEventListener('click', displayList)
-
+// back-to-top arrow (this never ran before because of the crash above)
 const scrollUp = () => {
-	const btnScrollTop = document.querySelector('.scroll-top')
-
-	if (
-		body.scrollTop > 500 ||
-		document.documentElement.scrollTop > 500
-	) {
-		btnScrollTop.style.display = 'block'
-	} else {
-		btnScrollTop.style.display = 'none'
-	}
+  const btnScrollTop = document.querySelector('.scroll-top')
+  if (!btnScrollTop) return
+  const y = window.scrollY || document.documentElement.scrollTop
+  btnScrollTop.style.display = y > 500 ? 'block' : 'none'
 }
-
 document.addEventListener('scroll', scrollUp)
+scrollUp()
+
+// Enable theme transitions only after page has fully loaded
+// This prevents the wonky staggered fade-in on initial load
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.body.classList.add('theme-ready')
+  }, 100) // Small delay to ensure all elements are rendered
+})

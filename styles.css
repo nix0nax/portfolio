@@ -27,11 +27,11 @@ body {
 }
 
 .light {
-  --clr-bg: #fcfcfc;
-  --clr-bg-alt: #fff;
+  --clr-bg: #faf8f3;
+  --clr-bg-alt: #f9f7f2;
   --clr-fg: #555;
   --clr-fg-alt: #444;
-  --clr-primary: #2978b5;
+  --clr-primary: #C2410C;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -491,4 +491,102 @@ main {
   .scroll-container {
     display: none;
   }
+}
+
+
+
+/* =========================================
+   FIX: Bring back bullets for Experience & Beyond
+   ========================================= */
+.experience ul, 
+.beyond ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  text-align: left;
+}
+
+.experience li::marker, 
+.beyond li::marker {
+  color: var(--clr-primary); /* Makes the bullets match your theme */
+}
+
+/* =========================================
+   NEW: 4-Column Grouped Skills Layout
+   ========================================= */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2em;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.skills__category h4 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: var(--clr-primary);
+  font-size: 1.1rem;
+}
+
+/* Override the old flat list styles for the new grouped layout */
+.skills__category .skills__list {
+  max-width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills__category .skills__list-item {
+  width: 100%;
+  max-width: 260px; /* Keeps the pills from stretching too wide */
+  text-align: center;
+  margin: 0.4em 0;
+}
+
+/* Default to light if the user's OS prefers light, otherwise dark */
+@media (prefers-color-scheme: light) {
+  body {
+    /* This applies the light theme variables by default if their OS is light */
+    --clr-bg: #fcfcfc;
+    --clr-bg-alt: #fff;
+    --clr-fg: #555;
+    --clr-fg-alt: #444;
+    --clr-primary: #C2410C; /* Or keep your orange #D4885B if you prefer */
+  }
+}
+
+.theme-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--clr-fg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   SMOOTH THEME TRANSITION (only after page load)
+   ========================================= */
+body.theme-ready,
+body.theme-ready .header,
+body.theme-ready .project,
+body.theme-ready .experience,
+body.theme-ready .beyond,
+body.theme-ready .btn,
+body.theme-ready .dropdown-content,
+body.theme-ready .skills__list-item,
+body.theme-ready .project__stack-item {
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease, 
+    border-color 0.3s ease, 
+    box-shadow 0.3s ease,
+    transform 0.2s ease-in-out; /* <-- ADD THIS */
 }
